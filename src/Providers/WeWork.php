@@ -88,6 +88,7 @@ class WeWork extends Base
         if (empty($this->agentId)) {
             $queries = [
                 'appid' => $this->getClientId(),
+                'agentid' => $this->agentId ?? $this->config->get('agentid'),
                 'redirect_uri' => $this->redirectUrl,
                 'response_type' => 'code',
                 'scope' => $this->formatScopes($this->scopes, $this->scopeSeparator),
